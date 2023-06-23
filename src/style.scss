@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  .App {
+    padding: 10px;
+    min-height: 100vh;
+
+    .bg-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      button {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid black;
+        cursor: pointer;
+      }
+    }
+
+    .todo-header {
+      font-size: 40px;
+      font-weight: 600;
+      width: fit-content;
+      margin: 2rem auto;
+    }
+
+    .input-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      width: fit-content;
+      margin: 0 auto;
+
+      input {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        font-size: 20px;
+        padding: 5px 10px;
+        border: 1px solid black;
+
+        &::placeholder {
+          color: black;
+        }
+      }
+
+      button {
+        padding: 5px 10px;
+        background: none;
+        border: none;
+        border: 1px solid black;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+
+    .todo-items {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 50px;
+      align-items: center;
+
+      .todo-item {
+        width: max-content;
+        background-color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        .todo-text {
+          cursor: pointer;
+          transition: all 0.5s;
+        }
+
+        .todo-item-content {
+          display: flex;
+          gap: 10px;
+        }
+
+        .todo-edit-btn,
+        .todo-delete-btn {
+          background-color: transparent;
+          border: none;
+          width: 24px;
+          height: 24px;
+          cursor: pointer;
+        }
+
+        
+      }
+    }
+  }
+}
