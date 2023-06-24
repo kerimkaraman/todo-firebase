@@ -9,7 +9,6 @@ function TodoItem(props) {
   const [textDec, setTextDec] = useState(false);
   const [editArea, setEditArea] = useState(false);
   const [editInput, setEditInput] = useState("");
-  const [reloader, setReloader] = useState(false);
 
   const updateTodo = async () => {
     const washingtonRef = doc(db, "todo", props.id);
@@ -26,12 +25,14 @@ function TodoItem(props) {
     <div className="todo-item">
       <div style={{ textDecoration: `${textDec ? "line-through" : "none"}` }} className="todo-item-content">
         <p onClick={() => { setTextDec(!textDec); setBgBlur(!bgBlur) }} className="todo-text">{props.text}</p>
-        <button onClick={() => { setEditArea(!editArea) }} className="todo-edit-btn">
-          <FontAwesomeIcon icon={faPen} />
-        </button>
-        <button onClick={deleteTodo} className="todo-delete-btn">
-          <FontAwesomeIcon icon={faTrash} />
-        </button>
+        <div className="todo-item-edit-btns">
+          <button onClick={() => { setEditArea(!editArea) }} className="todo-edit-btn">
+            <FontAwesomeIcon icon={faPen} />
+          </button>
+          <button onClick={deleteTodo} className="todo-delete-btn">
+            <FontAwesomeIcon icon={faTrash} />
+          </button>
+        </div>
       </div>
       <div style={{ display: `${editArea ? 'flex' : 'none'}` }} className="todo-item-edit-area">
         <input type="text" onChange={(e) => { setEditInput(e.target.value) }} />

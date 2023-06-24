@@ -55,19 +55,19 @@ body {
         padding: 5px 10px;
         border: 1px solid black;
         background-color: #252C40;
-        color: gray;
+        color: #E7F2E2;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
 
         &::placeholder {
-          color: grey;
+          color: #E7F2E2;
         }
       }
 
       button {
         padding: 5px 10px;
         background: #252C40;
-        color: grey;
+        color: #E7F2E2;
         border: none;
         border: 1px solid black;
         font-size: 20px;
@@ -88,7 +88,7 @@ body {
         display: flex;
         flex-direction: column;
         gap: 15px;
-        width: max-content;
+        width: 300px;
         background-color: #423A6F;
         color: #E7F2E2;
         padding: 10px 20px;
@@ -104,21 +104,25 @@ body {
         .todo-item-content {
           display: flex;
           gap: 10px;
+          justify-content: space-between;
           transition: all 0.5s;
         }
 
-        .todo-edit-btn,
-        .todo-delete-btn {
-          background-color: transparent;
-          border: none;
-          width: 24px;
-          height: 24px;
-          cursor: pointer;
-        }
+        .todo-item-edit-btns {
+          display: flex;
 
+          .todo-edit-btn,
+          .todo-delete-btn {
+            background-color: transparent;
+            border: none;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+          }
+        }
         .todo-item-edit-area {
           justify-content: center;
-          
+
         }
       }
     }

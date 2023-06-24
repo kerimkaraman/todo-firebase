@@ -29,12 +29,13 @@ function App() {
   const todoButtonClick = () => {
     uploadTodo();
     getTodos();
+    setTodo("")
   }
 
   useEffect(() => {
     getTodos();
   }, [])
-  
+
   return (
     <div className="App">
       <div className="todo-header">
@@ -51,7 +52,7 @@ function App() {
         />
       </div>
       <div className="input-area">
-        <input type="text" onChange={(e) => { setTodo(e.target.value) }} placeholder="Enter a To-do..." />
+        <input type="text" onChange={(e) => { setTodo(e.target.value) }} placeholder="Enter a To-do..." value={todo} />
         <button className="add-btn" onClick={todoButtonClick}>Add To-Do</button>
       </div>
       <div className="todo-items">
