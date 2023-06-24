@@ -18,7 +18,7 @@ Bu projede React ve Firebase kullanarak bir Todo App yapılmıştır. Todo App i
 ![Uygulama Ekran Görüntüsü](https://prnt.sc/fKNKD0PgmBiy)
 ## Demo
 
-Demoya gif veya bağlantı ekleyin
+[Live Demo](https://iridescent-medovik-011645.netlify.app)
 
   
 ## Ekler
