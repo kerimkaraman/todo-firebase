@@ -29,7 +29,6 @@ function App() {
   const todoButtonClick = () => {
     uploadTodo();
     getTodos();
-    setTodo("")
   }
 
   useEffect(() => {

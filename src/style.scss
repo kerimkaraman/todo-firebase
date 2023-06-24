@@ -118,11 +118,35 @@ body {
             width: 24px;
             height: 24px;
             cursor: pointer;
+            transition: all 0.5s;
+            border-radius: 50%;
+            &:hover {
+              background-color: #252C40;
+            }
           }
         }
+
         .todo-item-edit-area {
           justify-content: center;
 
+          input {
+            background-color: #252C40;
+            color: #E7F2E2;
+            padding: 5px;
+            outline: none;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border: 1px solid black;
+          }
+
+          button {
+            background-color: #252C40;
+            color: #E7F2E2;
+            border: 1px solid black;
+            padding: 5px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+          }
         }
       }
     }
