@@ -32,17 +32,10 @@ function App() {
   useEffect(() => {
     getTodos();
   }, [])
-
-  const [bgChoose, setBgChoose] = useState("standart");
   return (
-    <div className={`App ${bgChoose}`}>
-      <div className="bg-buttons">
-        <button onClick={() => { setBgChoose("standart") }}
-          className="setting-btn standart"></button>
-        <button onClick={() => { setBgChoose("light") }}
-          className="setting-btn light"></button>
-        <button onClick={() => { setBgChoose("darker") }}
-          className="setting-btn darker"></button>
+    <div className={`App`}>
+      <div className="bg-image">
+        
       </div>
       <div className="todo-header">
         <Typewriter
