@@ -13,10 +13,7 @@ body {
   .App {
     padding: 10px;
     min-height: 100vh;
-
-    .bg-image {
-      
-    }
+    background-color: #353F5B;
 
     .bg-buttons {
       display: flex;
@@ -38,6 +35,8 @@ body {
       font-weight: 600;
       width: fit-content;
       margin: 2rem auto;
+      color: #E7F2E2;
+      transition: 0.5s all;
     }
 
     .input-area {
@@ -55,19 +54,26 @@ body {
         font-size: 20px;
         padding: 5px 10px;
         border: 1px solid black;
+        background-color: #252C40;
+        color: gray;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
 
         &::placeholder {
-          color: black;
+          color: grey;
         }
       }
 
       button {
         padding: 5px 10px;
-        background: none;
+        background: #252C40;
+        color: grey;
         border: none;
         border: 1px solid black;
         font-size: 20px;
         cursor: pointer;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
       }
     }
 
@@ -83,7 +89,8 @@ body {
         flex-direction: column;
         gap: 15px;
         width: max-content;
-        background-color: white;
+        background-color: #423A6F;
+        color: #E7F2E2;
         padding: 10px 20px;
         border-radius: 20px;
         cursor: pointer;
@@ -97,6 +104,7 @@ body {
         .todo-item-content {
           display: flex;
           gap: 10px;
+          transition: all 0.5s;
         }
 
         .todo-edit-btn,
@@ -110,6 +118,7 @@ body {
 
         .todo-item-edit-area {
           justify-content: center;
+          
         }
       }
     }

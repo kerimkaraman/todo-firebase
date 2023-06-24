@@ -12,11 +12,13 @@ function App() {
   const [allTodos, setAllTodos] = useState([]);
 
   async function uploadTodo() {
-    const docID = uuid()
-    await setDoc(doc(db, "todo", docID), {
-      id: docID,
-      text: todo,
-    });
+    if (todo != " ") {
+      const docID = uuid();
+      await setDoc(doc(db, "todo", docID), {
+        id: docID,
+        text: todo,
+      });
+    }
   }
   async function getTodos() {
     const querySnapshot = await getDocs(collection(db, "todo"));
@@ -32,11 +34,9 @@ function App() {
   useEffect(() => {
     getTodos();
   }, [])
+  
   return (
-    <div className={`App`}>
-      <div className="bg-image">
-        
-      </div>
+    <div className="App">
       <div className="todo-header">
         <Typewriter
           options={{

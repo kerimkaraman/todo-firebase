@@ -7,7 +7,6 @@ import { db } from "../firebase";
 
 function TodoItem(props) {
   const [textDec, setTextDec] = useState(false);
-  const [bgBlur, setBgBlur] = useState(false);
   const [editArea, setEditArea] = useState(false);
   const [editInput, setEditInput] = useState("");
   const [reloader, setReloader] = useState(false);
@@ -17,7 +16,6 @@ function TodoItem(props) {
     await updateDoc(washingtonRef, {
       text: editInput
     })
-    setReloader(!reloader);
   }
 
   const deleteTodo = async () => {
@@ -25,8 +23,7 @@ function TodoItem(props) {
   }
 
   return (
-    <div style={{ backgroundColor: `${bgBlur ? 'grey' : 'white'}` }}
-      className="todo-item">
+    <div className="todo-item">
       <div style={{ textDecoration: `${textDec ? "line-through" : "none"}` }} className="todo-item-content">
         <p onClick={() => { setTextDec(!textDec); setBgBlur(!bgBlur) }} className="todo-text">{props.text}</p>
         <button onClick={() => { setEditArea(!editArea) }} className="todo-edit-btn">
