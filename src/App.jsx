@@ -20,8 +20,8 @@ function App() {
   }
   async function getTodos() {
     const querySnapshot = await getDocs(collection(db, "todo"));
-    const todos = querySnapshot.docs.map(doc => doc.data())
-    setAllTodos(todos)
+    const todos = querySnapshot.docs.map(doc => doc.data());
+    setAllTodos(todos);
   }
 
   const todoButtonClick = () => {
@@ -33,35 +33,16 @@ function App() {
     getTodos();
   }, [])
 
-  const styles = {
-    bgBlue: {
-      'backgroundColor': '#0093E9',
-      'backgroundImage': 'linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)'
-    },
-    bgRed: {
-      'backgroundColor': '#FFE53B',
-      'backgroundImage': 'linear-gradient(147deg, #FFE53B 0%, #FF2525 74%)'
-    },
-    bgGreen: {
-      'backgroundColor': '#F4D03F',
-      'backgroundImage': 'linear-gradient(132deg, #F4D03F 0%, #16A085 100%)'
-    }
-  }
-
-
-  const [bgChoose, setBgChoose] = useState(styles.bgBlue);
+  const [bgChoose, setBgChoose] = useState("standart");
   return (
-    <div style={bgChoose} className="App">
+    <div className={`App ${bgChoose}`}>
       <div className="bg-buttons">
-        <button style={styles.bgGreen}
-          onClick={() => { setBgChoose(styles.bgGreen) }}
-          className="setting-btn bg-greenish-button"></button>
-        <button style={styles.bgBlue}
-          onClick={() => { setBgChoose(styles.bgBlue) }}
-          className="setting-btn bg-blueish-button"></button>
-        <button style={styles.bgRed}
-          onClick={() => { setBgChoose(styles.bgRed) }}
-          className="setting-btn bg-redish-button"></button>
+        <button onClick={() => { setBgChoose("standart") }}
+          className="setting-btn standart"></button>
+        <button onClick={() => { setBgChoose("light") }}
+          className="setting-btn light"></button>
+        <button onClick={() => { setBgChoose("darker") }}
+          className="setting-btn darker"></button>
       </div>
       <div className="todo-header">
         <Typewriter

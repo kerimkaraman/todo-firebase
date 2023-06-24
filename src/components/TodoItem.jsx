@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { doc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 function TodoItem(props) {
@@ -10,7 +10,7 @@ function TodoItem(props) {
   const [bgBlur, setBgBlur] = useState(false);
   const [editArea, setEditArea] = useState(false);
   const [editInput, setEditInput] = useState("");
-  const [reloader, setReloader] = useState(false);  
+  const [reloader, setReloader] = useState(false);
 
   const updateTodo = async () => {
     const washingtonRef = doc(db, "todo", props.id);
@@ -18,6 +18,10 @@ function TodoItem(props) {
       text: editInput
     })
     setReloader(!reloader);
+  }
+
+  const deleteTodo = async () => {
+    await deleteDoc(doc(db, "todo", props.id));
   }
 
   return (
@@ -28,7 +32,7 @@ function TodoItem(props) {
         <button onClick={() => { setEditArea(!editArea) }} className="todo-edit-btn">
           <FontAwesomeIcon icon={faPen} />
         </button>
-        <button className="todo-delete-btn">
+        <button onClick={deleteTodo} className="todo-delete-btn">
           <FontAwesomeIcon icon={faTrash} />
         </button>
       </div>
